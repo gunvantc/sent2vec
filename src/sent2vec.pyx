@@ -107,7 +107,7 @@ cdef class Sent2vecModel:
     def embed_sentence(self, sentence, num_threads=1):
         return self.embed_sentences([sentence], num_threads)
 
-    def get_vocabulary(self):
+    def get_vocabular(self):
         vocab = list(self._thisptr.getVocab())
         vocab = [w.decode('utf-8', 'ignore') for w in vocab]
         freqs = list(self._thisptr.getUnigramsCounts())
@@ -115,7 +115,7 @@ cdef class Sent2vecModel:
         return OrderedDict(zip(vocab, freqs))
 
     def get_unigram_embeddings(self):
-        vocab = [w for w, c in self.get_vocabulary().items()]
+        vocab = [w for w, c in self.get_vocabular().items()]
         return self.embed_sentences(vocab), vocab
 
     def embed_unigrams(self, unigrams):
