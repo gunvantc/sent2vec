@@ -127,6 +127,7 @@ std::vector<std::string> Dictionary::getVocab() const {
   for (auto& w : words_) {
     vocab.push_back(w.word);
   }
+  std::cout << "Yep Gunvant edited this" << std::endl;
   return vocab;
 }
 
