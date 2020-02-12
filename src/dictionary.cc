@@ -125,7 +125,7 @@ std::string Dictionary::getWord(int32_t id) const {
 std::vector<std::string> Dictionary::getVocab() const {
   std::vector<std::string> vocab;
   for (auto& w : words_) {
-    if (w.type == entry_type::word) vocab.push_back(w.word);
+    vocab.push_back(w.word);
   }
   return vocab;
 }
